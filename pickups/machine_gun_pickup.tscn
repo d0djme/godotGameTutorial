@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cue0caxdg8e0"]
+
+[ext_resource type="PackedScene" uid="uid://tgbkqc23q5xq" path="res://pickups/pickup.tscn" id="1_i7uqe"]
+[ext_resource type="PackedScene" uid="uid://bb1xpijsib3ha" path="res://weapons/assets/machinegun.glb" id="2_sy83p"]
+
+[node name="MachineGunPickup" instance=ExtResource("1_i7uqe")]
+pickup_type = 1
+pickup_amnt = 40
+
+[node name="machinegun" parent="Graphics" index="0" instance=ExtResource("2_sy83p")]
+transform = Transform3D(0.459848, 0, 0, 0, 0.459848, 0, 0, 0, 0.459848, 0, -0.152483, 0.0875458)

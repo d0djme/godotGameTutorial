@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://dixf6yuoptk1r"]
+
+[ext_resource type="Texture2D" uid="uid://bd0oqwg7lrptw" path="res://effects/circle32.png" id="1_nkhfo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr8po"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(1, 1, 0.47451, 1)
+albedo_texture = ExtResource("1_nkhfo")
+texture_filter = 2
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kfits"]
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+scale_min = 0.03
+scale_max = 0.03
+
+[sub_resource type="QuadMesh" id="QuadMesh_diusm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33ymj"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id="Gradient_20npt"]
+offsets = PackedFloat32Array(0.619205, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hxpl1"]
+gradient = SubResource("Gradient_20npt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_13ash"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0.1, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 720.0
+scale_min = 0.4
+scale_max = 0.5
+color = Color(0.509804, 0.509804, 0.509804, 0.694118)
+color_ramp = SubResource("GradientTexture1D_hxpl1")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ih80c"]
+radial_segments = 7
+rings = 3
+
+[sub_resource type="QuadMesh" id="QuadMesh_ic1nv"]
+
+[node name="BulletHitEffect" type="Node3D"]
+
+[node name="SparkParticles" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_wr8po")
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_kfits")
+draw_pass_1 = SubResource("QuadMesh_diusm")
+
+[node name="SmokeParticles" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_33ymj")
+emitting = false
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_13ash")
+draw_pass_1 = SubResource("SphereMesh_ih80c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.998364, -0.0571806, 0, 0.0571806, -0.998364, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_ic1nv")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.1, 0.1, 0.1)
+texture_albedo = ExtResource("1_nkhfo")
+modulate = Color(0.0117647, 0.0117647, 0.0117647, 1)
+distance_fade_enabled = true
+
+[connection signal="tree_entered" from="." to="SparkParticles" method="restart"]
+[connection signal="tree_entered" from="." to="SmokeParticles" method="restart"]

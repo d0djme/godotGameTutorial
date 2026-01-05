@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cy2a22dbgcvdc"]
+
+[ext_resource type="Texture2D" uid="uid://cvct4okdd33v5" path="res://pickups/assets/mg_texture.png" id="1_nknm3"]
+
+[resource]
+resource_name = "MGAmmoMaterial"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_nknm3")
+texture_filter = 2

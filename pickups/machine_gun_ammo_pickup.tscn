@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0bu4pnhf43ty"]
+
+[ext_resource type="PackedScene" uid="uid://tgbkqc23q5xq" path="res://pickups/pickup.tscn" id="1_f8fny"]
+[ext_resource type="PackedScene" uid="uid://dhn7fuaoio48o" path="res://pickups/assets/mg_ammo.glb" id="2_ub7qh"]
+
+[node name="MachineGunAmmoPickup" instance=ExtResource("1_f8fny")]
+pickup_type = 2
+
+[node name="mg_ammo" parent="Graphics" index="0" instance=ExtResource("2_ub7qh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.178861, 0)

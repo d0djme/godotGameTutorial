@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bx1d6yay31beg"]
+
+[ext_resource type="Texture2D" uid="uid://bqtybfbibfd5t" path="res://pickups/assets/sg_texture.png" id="1_llgh3"]
+
+[resource]
+resource_name = "ShotgunMaterial"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_llgh3")
+texture_filter = 2

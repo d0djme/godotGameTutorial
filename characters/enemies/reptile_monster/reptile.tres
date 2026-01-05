@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dpiyv6tc63da7"]
+
+[ext_resource type="Texture2D" uid="uid://bawjd3xfyuo7q" path="res://characters/enemies/reptile_monster/reptile_texture.png" id="1_yc8fk"]
+
+[resource]
+resource_name = "reptile"
+albedo_texture = ExtResource("1_yc8fk")
+texture_filter = 2

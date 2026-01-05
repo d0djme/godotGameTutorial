@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0fccadcynj0"]
+
+[ext_resource type="PackedScene" uid="uid://tgbkqc23q5xq" path="res://pickups/pickup.tscn" id="1_wdq5p"]
+[ext_resource type="PackedScene" uid="uid://bc6umssk2bgir" path="res://pickups/assets/rocket.glb" id="2_jwotb"]
+
+[node name="RocketLauncherAmmoPickup" instance=ExtResource("1_wdq5p")]
+pickup_type = 2
+weapon_type = 2
+pickup_amnt = 5
+
+[node name="rocket" parent="Graphics" index="0" instance=ExtResource("2_jwotb")]
+transform = Transform3D(0.652551, 0, 0, 0, 0.652551, 0, 0, 0, 0.652551, -0.25, -0.309452, 0)
+
+[node name="rocket2" parent="Graphics" index="1" instance=ExtResource("2_jwotb")]
+transform = Transform3D(0.652551, 0, 0, 0, 0.652551, 0, 0, 0, 0.652551, 0.25, -0.309764, 0)
