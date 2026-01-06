@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpmtfr2rv2xq3"
-path.s3tc="res://.godot/imported/v_ak47_v_ak47_Magazine.png-a68dc79430877b1cf974d9e70cb6a741.s3tc.ctex"
+uid="uid://d3kwqjl0puwii"
+path.s3tc="res://.godot/imported/v_ak47_v_ak47_magazine.png-8b6b34c1712e68142f702036acfe565a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://weapons/assets/textures/v_ak47_v_ak47_Magazine.png"
-dest_files=["res://.godot/imported/v_ak47_v_ak47_Magazine.png-a68dc79430877b1cf974d9e70cb6a741.s3tc.ctex"]
+source_file="res://weapons/assets/textures/v_ak47_v_ak47_magazine.png"
+dest_files=["res://.godot/imported/v_ak47_v_ak47_magazine.png-8b6b34c1712e68142f702036acfe565a.s3tc.ctex"]
 
 [params]
 

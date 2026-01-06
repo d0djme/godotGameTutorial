@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bjpx4s7ejd66l"
-path="res://.godot/imported/ak47.blend-290cadf4de7ec33baac572a910f9324c.scn"
+uid="uid://cyiu4i0dmaf0k"
+path="res://.godot/imported/akdefault.blend-a014d06a7cb2df19892a1e4206ae4cf2.scn"
 
 [deps]
 
-source_file="res://weapons/assets/ak47.blend"
-dest_files=["res://.godot/imported/ak47.blend-290cadf4de7ec33baac572a910f9324c.scn"]
+source_file="res://weapons/assets/akdefault.blend"
+dest_files=["res://.godot/imported/akdefault.blend-a014d06a7cb2df19892a1e4206ae4cf2.scn"]
 
 [params]
 
@@ -18,13 +18,13 @@ nodes/root_name="Scene Root"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
-nodes/import_as_skeleton_bones=false
+nodes/import_as_skeleton_bones=true
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
-meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/create_shadow_meshes=false
+meshes/light_baking=3
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -40,17 +40,17 @@ materials/extract_path=""
 _subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
-blender/nodes/punctual_lights=true
-blender/nodes/cameras=true
+blender/nodes/punctual_lights=false
+blender/nodes/cameras=false
 blender/nodes/custom_properties=true
 blender/nodes/modifiers=1
 blender/meshes/colors=false
 blender/meshes/uvs=true
 blender/meshes/normals=true
-blender/meshes/export_geometry_nodes_instances=false
+blender/meshes/export_geometry_nodes_instances=true
 blender/meshes/tangents=true
 blender/meshes/skins=2
-blender/meshes/export_bones_deforming_mesh_only=false
+blender/meshes/export_bones_deforming_mesh_only=true
 blender/materials/unpack_enabled=true
 blender/materials/export_materials=1
 blender/animation/limit_playback=true

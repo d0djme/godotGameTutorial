@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7n5jxovl5teu"
-path.s3tc="res://.godot/imported/v_ak47_v_ak47_newscope.png-4fea9fef9548127dd9be12a56be20394.s3tc.ctex"
+uid="uid://bh2kbgt5lwux5"
+path.s3tc="res://.godot/imported/v_ak47_v_ak47_lower_body.png-ca761ac7221511615af54973f44a6c9a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://weapons/assets/textures/v_ak47_v_ak47_newscope.png"
-dest_files=["res://.godot/imported/v_ak47_v_ak47_newscope.png-4fea9fef9548127dd9be12a56be20394.s3tc.ctex"]
+source_file="res://weapons/assets/textures/v_ak47_v_ak47_lower_body.png"
+dest_files=["res://.godot/imported/v_ak47_v_ak47_lower_body.png-ca761ac7221511615af54973f44a6c9a.s3tc.ctex"]
 
 [params]
 

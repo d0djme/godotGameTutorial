@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0htu70k1ahxh"
-path.s3tc="res://.godot/imported/v_ak47_v_ak47_view_glove.png-6b4d2e32030455fae0eee491b8768ea8.s3tc.ctex"
+uid="uid://bc82n8xhjcss1"
+path.s3tc="res://.godot/imported/v_ak47_v_ak47_forearm.png-8eb9a8a872b01481fe42b7637846d788.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://weapons/assets/textures/v_ak47_v_ak47_view_glove.png"
-dest_files=["res://.godot/imported/v_ak47_v_ak47_view_glove.png-6b4d2e32030455fae0eee491b8768ea8.s3tc.ctex"]
+source_file="res://weapons/assets/textures/v_ak47_v_ak47_forearm.png"
+dest_files=["res://.godot/imported/v_ak47_v_ak47_forearm.png-8eb9a8a872b01481fe42b7637846d788.s3tc.ctex"]
 
 [params]
 

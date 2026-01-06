@@ -13,7 +13,6 @@ func _ready():
 
 func flash():
 	show()
-	rotation.z = randf_range(0.0, TAU)
 	timer.start()
 
 func end_flash():

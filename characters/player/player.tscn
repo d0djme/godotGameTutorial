@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bosesbvnakx3t"]
+[gd_scene load_steps=76 format=3 uid="uid://bosesbvnakx3t"]
 
 [ext_resource type="Script" uid="uid://d0pm46ga47pi6" path="res://characters/player/player.gd" id="1_7n32i"]
 [ext_resource type="PackedScene" uid="uid://efhaiq50xokb" path="res://characters/character_mover.tscn" id="2_vtwgx"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://ciltkgtft5i8a" path="res://sfx/weapons/melee_attack.wav" id="9_77fbj"]
 [ext_resource type="Script" uid="uid://c6wtgigbl5f0w" path="res://sfx/play_random_sound.gd" id="10_g7jsa"]
 [ext_resource type="PackedScene" uid="uid://c4dcely5fxptb" path="res://effects/muzzle_flash/assets/muzzleflash3.glb" id="10_n45nn"]
+[ext_resource type="PackedScene" uid="uid://craw7tj2fekv3" path="res://weapons/assets/ak/ak_scene.tscn" id="11_bakn2"]
 [ext_resource type="PackedScene" uid="uid://sjays8d1atk5" path="res://weapons/bullet_emitters/burst_emitter.tscn" id="12_5paux"]
 [ext_resource type="Texture2D" uid="uid://c0hgwcagjnblp" path="res://weapons/crosshairs/crosshair065.png" id="12_ebnbw"]
 [ext_resource type="PackedScene" uid="uid://dj5idvam87twk" path="res://weapons/bullet_emitters/spray_emitter.tscn" id="13_w4lcl"]
@@ -512,7 +513,11 @@ attack_rate = 0.1
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 
+[node name="ak" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("11_bakn2")]
+transform = Transform3D(0.24500003, 0, 0, 0, 0.24500003, 0, 0, 0, 0.24500003, -1.0944177, 0.68616533, 1.4867866)
+
 [node name="MachineGun" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("3_kunn4")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics"]
 libraries = {
@@ -521,12 +526,13 @@ libraries = {
 autoplay = "RESET"
 
 [node name="MuzzleFlash" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("6_kka7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.327973, -1.71793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0911845, -0.24452019, -3.8715007)
 
 [node name="muzzleflash1" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics/MuzzleFlash" instance=ExtResource("7_5fw55")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.7422805e-08, 0, 1, 0, 8.7422805e-08, 0, -1, 0.5034641, 0, -1.5122719)
 
 [node name="BulletEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun" instance=ExtResource("7_brirq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5933292, 0, 0)
 
 [node name="HitScanBulletEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun/BulletEmitter" instance=ExtResource("8_1rgm5")]
 
