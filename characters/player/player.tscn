@@ -1,12 +1,12 @@
 [gd_scene load_steps=75 format=3 uid="uid://bosesbvnakx3t"]
 
-[ext_resource type="Script" path="res://characters/player/player.gd" id="1_7n32i"]
+[ext_resource type="Script" uid="uid://d0pm46ga47pi6" path="res://characters/player/player.gd" id="1_7n32i"]
 [ext_resource type="PackedScene" uid="uid://efhaiq50xokb" path="res://characters/character_mover.tscn" id="2_vtwgx"]
-[ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_xwbhm"]
+[ext_resource type="Script" uid="uid://dxxebr7pprox3" path="res://characters/player/weapon_manager.gd" id="2_xwbhm"]
 [ext_resource type="PackedScene" uid="uid://c32igc5b5mp8d" path="res://weapons/assets/machete.glb" id="3_1jjs7"]
 [ext_resource type="PackedScene" uid="uid://kry43mb8dukk" path="res://characters/health_manager.tscn" id="3_46chp"]
 [ext_resource type="PackedScene" uid="uid://bb1xpijsib3ha" path="res://weapons/assets/machinegun.glb" id="3_kunn4"]
-[ext_resource type="Script" path="res://weapons/weapon.gd" id="4_vefdk"]
+[ext_resource type="Script" uid="uid://dbvv6wyj22tnw" path="res://weapons/weapon.gd" id="4_vefdk"]
 [ext_resource type="PackedScene" uid="uid://r3vm1bqpmhqy" path="res://weapons/assets/shotgun.glb" id="5_afp0a"]
 [ext_resource type="PackedScene" uid="uid://cetjxduwon0nx" path="res://weapons/assets/rocketlauncher.glb" id="6_2k05y"]
 [ext_resource type="PackedScene" uid="uid://boiivv0jmfawe" path="res://effects/muzzle_flash/muzzle_flash.tscn" id="6_kka7e"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bb6bfvnmtsadm" path="res://weapons/bullet_emitters/hit_scan_bullet_emitter.tscn" id="8_1rgm5"]
 [ext_resource type="Texture2D" uid="uid://ofvdv0cwgcjm" path="res://weapons/crosshairs/crosshair001.png" id="8_afmeh"]
 [ext_resource type="AudioStream" uid="uid://ciltkgtft5i8a" path="res://sfx/weapons/melee_attack.wav" id="9_77fbj"]
-[ext_resource type="Script" path="res://sfx/play_random_sound.gd" id="10_g7jsa"]
+[ext_resource type="Script" uid="uid://c6wtgigbl5f0w" path="res://sfx/play_random_sound.gd" id="10_g7jsa"]
 [ext_resource type="PackedScene" uid="uid://c4dcely5fxptb" path="res://effects/muzzle_flash/assets/muzzleflash3.glb" id="10_n45nn"]
 [ext_resource type="PackedScene" uid="uid://sjays8d1atk5" path="res://weapons/bullet_emitters/burst_emitter.tscn" id="12_5paux"]
 [ext_resource type="Texture2D" uid="uid://c0hgwcagjnblp" path="res://weapons/crosshairs/crosshair065.png" id="12_ebnbw"]
@@ -27,20 +27,20 @@
 [ext_resource type="Texture2D" uid="uid://ce7dgu2rc7mq1" path="res://weapons/crosshairs/crosshair066.png" id="17_ogikj"]
 [ext_resource type="AudioStream" uid="uid://0225hvxrhwd5" path="res://sfx/weapons/gun_fire.wav" id="17_y570q"]
 [ext_resource type="Texture2D" uid="uid://k1ovhs8fdv5v" path="res://weapons/crosshairs/crosshair026.png" id="18_lbwnc"]
-[ext_resource type="Script" path="res://characters/player/PickupManager.gd" id="24_tpxu6"]
+[ext_resource type="Script" uid="uid://didgxg1asy1nf" path="res://characters/player/PickupManager.gd" id="24_tpxu6"]
 [ext_resource type="Theme" uid="uid://cv1m1yn6evubh" path="res://ui/main_theme.tres" id="25_mxd6d"]
 [ext_resource type="AudioStream" uid="uid://dmssvpjxad1sb" path="res://sfx/player/heal.wav" id="25_rjg1o"]
-[ext_resource type="Script" path="res://characters/player/HealthEffects.gd" id="25_w60w3"]
-[ext_resource type="Script" path="res://characters/player/DeathScreen.gd" id="26_4eyc7"]
-[ext_resource type="Script" path="res://characters/player/PickupInfo.gd" id="26_112k3"]
+[ext_resource type="Script" uid="uid://raj1qru8un2x" path="res://characters/player/HealthEffects.gd" id="25_w60w3"]
+[ext_resource type="Script" uid="uid://gpso5b3kxo7i" path="res://characters/player/DeathScreen.gd" id="26_4eyc7"]
+[ext_resource type="Script" uid="uid://bvx0otsq32ejd" path="res://characters/player/PickupInfo.gd" id="26_112k3"]
 [ext_resource type="AudioStream" uid="uid://dqph1lmcjh5n1" path="res://sfx/weapons/equip_weapon.wav" id="26_a5h0r"]
 [ext_resource type="AudioStream" uid="uid://bay6lun2870he" path="res://sfx/weapons/pickup_ammo.wav" id="26_iqxj0"]
-[ext_resource type="Script" path="res://characters/player/StatsDisplay.gd" id="27_7p025"]
+[ext_resource type="Script" uid="uid://dbqh2d5mukosb" path="res://characters/player/StatsDisplay.gd" id="27_7p025"]
 [ext_resource type="AudioStream" uid="uid://ebtq3pkr2wg3" path="res://sfx/weapons/rocket_laucher_shoot.wav" id="27_ga2qo"]
 [ext_resource type="AudioStream" uid="uid://lbwdsidrydcf" path="res://sfx/player/player_jump.wav" id="29_ddgk4"]
 [ext_resource type="AudioStream" uid="uid://cwlaydsq3o0rx" path="res://sfx/steps/step_1.wav" id="30_0kyof"]
 [ext_resource type="AudioStream" uid="uid://bxa4wsdh1abqi" path="res://sfx/player/player_hurt.wav" id="30_1r6cd"]
-[ext_resource type="Script" path="res://characters/player/StepTracker.gd" id="30_oqo1a"]
+[ext_resource type="Script" uid="uid://j4f3vwwnt4vo" path="res://characters/player/StepTracker.gd" id="30_oqo1a"]
 [ext_resource type="AudioStream" uid="uid://ds7tkd0j6p2wd" path="res://sfx/player/player_die.wav" id="31_ty0n3"]
 [ext_resource type="AudioStream" uid="uid://b474upm5ywhjw" path="res://sfx/steps/step_2.wav" id="31_vvb3o"]
 
@@ -120,8 +120,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2olr7"]
 _data = {
-"RESET": SubResource("Animation_qn6ua"),
-"attack": SubResource("Animation_s46ll")
+&"RESET": SubResource("Animation_qn6ua"),
+&"attack": SubResource("Animation_s46ll")
 }
 
 [sub_resource type="Animation" id="Animation_jigii"]
@@ -157,8 +157,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imd2l"]
 _data = {
-"RESET": SubResource("Animation_jigii"),
-"attack": SubResource("Animation_qgdcy")
+&"RESET": SubResource("Animation_jigii"),
+&"attack": SubResource("Animation_qgdcy")
 }
 
 [sub_resource type="Animation" id="Animation_htwlt"]
@@ -219,8 +219,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_73nhh"]
 _data = {
-"RESET": SubResource("Animation_htwlt"),
-"attack": SubResource("Animation_1vu8o")
+&"RESET": SubResource("Animation_htwlt"),
+&"attack": SubResource("Animation_1vu8o")
 }
 
 [sub_resource type="Animation" id="Animation_snctl"]
@@ -256,8 +256,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_se4ck"]
 _data = {
-"RESET": SubResource("Animation_snctl"),
-"attack": SubResource("Animation_oma21")
+&"RESET": SubResource("Animation_snctl"),
+&"attack": SubResource("Animation_oma21")
 }
 
 [sub_resource type="Animation" id="Animation_8rya4"]
@@ -294,8 +294,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i07gf"]
 _data = {
-"RESET": SubResource("Animation_8rya4"),
-"moving": SubResource("Animation_pshnd")
+&"RESET": SubResource("Animation_8rya4"),
+&"moving": SubResource("Animation_pshnd")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lemu2"]
@@ -341,8 +341,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_emhq4"]
 _data = {
-"RESET": SubResource("Animation_1sa4o"),
-"flash": SubResource("Animation_f6j01")
+&"RESET": SubResource("Animation_1sa4o"),
+&"flash": SubResource("Animation_f6j01")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_ecise"]
@@ -404,8 +404,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2btc3"]
 _data = {
-"RESET": SubResource("Animation_41fad"),
-"fade_in": SubResource("Animation_4vp4g")
+&"RESET": SubResource("Animation_41fad"),
+&"fade_in": SubResource("Animation_4vp4g")
 }
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
@@ -452,10 +452,10 @@ rotation_edit_mode = 1
 [node name="Machete" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource("3_1jjs7")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics"]
-autoplay = "RESET"
 libraries = {
-"": SubResource("AnimationLibrary_2olr7")
+&"": SubResource("AnimationLibrary_2olr7")
 }
+autoplay = "RESET"
 
 [node name="BulletEmitter" parent="Camera3D/WeaponManager/Weapons/Machete" instance=ExtResource("7_brirq")]
 
@@ -515,10 +515,10 @@ attack_rate = 0.1
 [node name="MachineGun" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("3_kunn4")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics"]
-autoplay = "RESET"
 libraries = {
-"": SubResource("AnimationLibrary_imd2l")
+&"": SubResource("AnimationLibrary_imd2l")
 }
+autoplay = "RESET"
 
 [node name="MuzzleFlash" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("6_kka7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.327973, -1.71793)
@@ -590,10 +590,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 rotation_edit_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics"]
-autoplay = "RESET"
 libraries = {
-"": SubResource("AnimationLibrary_73nhh")
+&"": SubResource("AnimationLibrary_73nhh")
 }
+autoplay = "RESET"
 
 [node name="BulletEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun" instance=ExtResource("7_brirq")]
 
@@ -654,10 +654,10 @@ attack_rate = 0.5
 [node name="RocketLauncher" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource("6_2k05y")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics"]
-autoplay = "RESET"
 libraries = {
-"": SubResource("AnimationLibrary_se4ck")
+&"": SubResource("AnimationLibrary_se4ck")
 }
+autoplay = "RESET"
 
 [node name="MuzzleFlash" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource("6_kka7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571116, -1.85313)
@@ -711,7 +711,7 @@ bus = &"Sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager"]
 libraries = {
-"": SubResource("AnimationLibrary_i07gf")
+&"": SubResource("AnimationLibrary_i07gf")
 }
 
 [node name="NearbyMonstersAlertAreaSmall" type="Area3D" parent="Camera3D/WeaponManager"]
@@ -829,7 +829,7 @@ color = Color(1, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerUILayer/HealthEffects"]
 libraries = {
-"": SubResource("AnimationLibrary_emhq4")
+&"": SubResource("AnimationLibrary_emhq4")
 }
 
 [node name="PickupInfo" type="Label" parent="PlayerUILayer"]
@@ -959,7 +959,7 @@ text = "Restart"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerUILayer/DeathScreen"]
 libraries = {
-"": SubResource("AnimationLibrary_2btc3")
+&"": SubResource("AnimationLibrary_2btc3")
 }
 
 [connection signal="moved" from="CharacterMover" to="Camera3D/WeaponManager" method="update_animation"]
