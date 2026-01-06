@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cyiu4i0dmaf0k" path="res://weapons/assets/akdefault.blend" id="1_ycij2"]
 
-[node name="reload" instance=ExtResource("1_ycij2")]
+[node name="ak47" instance=ExtResource("1_ycij2")]
 
 [node name="Skeleton3D" parent="." index="0"]
 bones/1/position = Vector3(0.17749906, -10.080679, 10.374831)

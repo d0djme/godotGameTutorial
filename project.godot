@@ -22,6 +22,10 @@ window/size/viewport_height=1200
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[dotnet]
+
+project/assembly_name="Shoota3d"
+
 [gui]
 
 theme/custom="res://ui/main_theme.tres"
