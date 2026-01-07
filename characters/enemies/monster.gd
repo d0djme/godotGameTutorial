@@ -1,34 +1,40 @@
-class_name Monster extends CharacterBody3D
+class_name Monster
+extends CharacterBody3D
 
 @onready var health_manager = $HealthManager
 @onready var vision_manager = $VisionManager
 @onready var ai_character_mover = $AICharacterMover
 @onready var attack_emitter = $AttackEmitter
-
 @onready var nearby_monsters_alert_area = $NearbyMonstersAlertArea
-
-@export var animation_player : AnimationPlayer
+@onready var visual: EnemyVisual = $Graphics/Visual
 
 @onready var player = get_tree().get_first_node_in_group("player")
 
-enum STATES {IDLE, ATTACK, DEAD}
-var cur_state = STATES.IDLE
+enum STATES { IDLE, ATTACK, DEAD }
+var cur_state := STATES.IDLE
 
-@export var attack_range = 2.0
-@export var damage = 15
-@export var attack_speed_modifier = 1.0
+@export var attack_range := 2.0
+@export var damage := 15
+@export var attack_speed_modifier := 1.0
+
+var is_attacking := false
 
 func _ready():
+	if visual == null:
+		push_error("EnemyVisual NOT FOUND: check Graphics/Visual")
+		return
+
 	var hitboxes = find_children("*", "HitBox")
 	for hitbox in hitboxes:
 		hitbox.on_hurt.connect(health_manager.hurt)
+
 	health_manager.died.connect(set_state.bind(STATES.DEAD))
 	health_manager.gibbed.connect(queue_free)
-	
+
 	hitboxes.append(self)
 	attack_emitter.set_bodies_to_exclude(hitboxes)
 	attack_emitter.set_damage(damage)
-	
+
 	set_state(STATES.IDLE)
 
 func hurt(damage_data: DamageData):
@@ -41,19 +47,26 @@ func alert():
 		alert_nearby_monsters()
 
 func alert_nearby_monsters():
-	for b in nearby_monsters_alert_area.get_overlapping_bodies():
-		if b is Monster:
-			b.alert()
+	for body in nearby_monsters_alert_area.get_overlapping_bodies():
+		if body is Monster:
+			body.alert()
 
 func set_state(state: STATES):
+	if visual:
+		visual.play_idle()
+
 	if cur_state == STATES.DEAD:
 		return
+
 	cur_state = state
+
 	match cur_state:
 		STATES.IDLE:
-			animation_player.play("idle")
+			is_attacking = false
+			visual.play_idle()
+
 		STATES.DEAD:
-			animation_player.play("die", 0.2)
+			visual.play_death()
 			collision_layer = 0
 			collision_mask = 1
 			ai_character_mover.stop_moving()
@@ -70,23 +83,29 @@ func process_idle_state(_delta):
 		alert()
 
 func process_attack_state(_delta):
-	var attacking = animation_player.current_animation == "attack"
 	var vec_to_player = player.global_position - global_position
-	
-	if vec_to_player.length() <= attack_range:
+	var dist = vec_to_player.length()
+
+	if dist <= attack_range:
 		ai_character_mover.stop_moving()
-		if !attacking and vision_manager.is_facing_target(player):
+
+		if not is_attacking and vision_manager.is_facing_target(player):
 			start_attack()
-		elif !attacking:
+		elif not is_attacking:
 			ai_character_mover.set_facing_dir(vec_to_player)
-	elif !attacking:
-		ai_character_mover.set_facing_dir(ai_character_mover.move_dir)
-		ai_character_mover.move_to_point(player.global_position)
-		animation_player.play("walk", -1, 2.0)
+	else:
+		if not is_attacking:
+			ai_character_mover.set_facing_dir(ai_character_mover.move_dir)
+			ai_character_mover.move_to_point(player.global_position)
+			visual.play_walk()
 
 func start_attack():
+	is_attacking = true
 	$AttackSound.play()
-	animation_player.play("attack", -1, attack_speed_modifier)
+	visual.play_attack()
 
-func do_attack(): # called from animation
+func do_attack(): # вызывается из анимации
 	attack_emitter.fire()
+
+func end_attack(): # вызвать из animation (в конце атаки)
+	is_attacking = false
