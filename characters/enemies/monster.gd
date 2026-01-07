@@ -48,15 +48,23 @@ func alert_nearby_monsters():
 func set_state(state: STATES):
 	if cur_state == STATES.DEAD:
 		return
+	
 	cur_state = state
+	
 	match cur_state:
 		STATES.IDLE:
-			animation_player.play("idle")
+			# Проверяем: 1. Существует ли плеер. 2. Есть ли в нем анимация.
+			if animation_player and animation_player.has_animation("idle"):
+				animation_player.play("idle")
+				
 		STATES.DEAD:
-			animation_player.play("die", 0.2)
+			if animation_player and animation_player.has_animation("die"):
+				animation_player.play("die", 0.2)
+			
 			collision_layer = 0
 			collision_mask = 1
-			ai_character_mover.stop_moving()
+			if ai_character_mover:
+				ai_character_mover.stop_moving()
 
 func _process(delta):
 	match cur_state:
@@ -70,7 +78,12 @@ func process_idle_state(_delta):
 		alert()
 
 func process_attack_state(_delta):
-	var attacking = animation_player.current_animation == "attack"
+	# Безопасно проверяем, идет ли сейчас анимация атаки
+	# Если плеера нет, считаем что "не атакует" (false)
+	var attacking = false
+	if animation_player:
+		attacking = animation_player.current_animation == "attack"
+	
 	var vec_to_player = player.global_position - global_position
 	
 	if vec_to_player.length() <= attack_range:
@@ -82,11 +95,18 @@ func process_attack_state(_delta):
 	elif !attacking:
 		ai_character_mover.set_facing_dir(ai_character_mover.move_dir)
 		ai_character_mover.move_to_point(player.global_position)
-		animation_player.play("walk", -1, 2.0)
+		# Безопасный запуск ходьбы
+		_play_safe("walk", -1, 2.0)
 
 func start_attack():
-	$AttackSound.play()
-	animation_player.play("attack", -1, attack_speed_modifier)
+	if $AttackSound: # На всякий случай проверяем и звук
+		$AttackSound.play()
+	_play_safe("attack", -1, attack_speed_modifier)
+
+# Вспомогательная функция, чтобы не писать if animation_player постоянно
+func _play_safe(anim_name: String, custom_blend: float = -1, custom_speed: float = 1.0):
+	if animation_player and animation_player.has_animation(anim_name):
+		animation_player.play(anim_name, custom_blend, custom_speed)
 
 func do_attack(): # called from animation
 	attack_emitter.fire()

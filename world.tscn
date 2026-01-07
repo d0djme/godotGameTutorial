@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://0dhe3gjbitcc"]
+[gd_scene load_steps=20 format=3 uid="uid://0dhe3gjbitcc"]
 
 [ext_resource type="PackedScene" uid="uid://b8s3n8yb106ff" path="res://environment/rock_boulder.tscn" id="1_316k8"]
 [ext_resource type="PackedScene" uid="uid://cbi1yylc50bjl" path="res://environment/rock_cliff.tscn" id="2_ufsoc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bosesbvnakx3t" path="res://characters/player/player.tscn" id="5_l8cp7"]
 [ext_resource type="PackedScene" uid="uid://c7cytar1b73si" path="res://characters/enemies/bird_monster/bird_monster.tscn" id="6_vtoyk"]
 [ext_resource type="PackedScene" uid="uid://cf6cs1c8gbxdw" path="res://pickups/health_pickup.tscn" id="7_4qk82"]
+[ext_resource type="PackedScene" uid="uid://dadv5ds3fo37h" path="res://characters/enemies/skeleton_monster/skeleton.tscn" id="8_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://dnyubb1dv6cb7" path="res://pickups/shotgun_pickup.tscn" id="8_xt8bw"]
 [ext_resource type="PackedScene" uid="uid://cue0caxdg8e0" path="res://pickups/machine_gun_pickup.tscn" id="9_imodu"]
 [ext_resource type="PackedScene" uid="uid://c0bu4pnhf43ty" path="res://pickups/machine_gun_ammo_pickup.tscn" id="10_0b7aw"]
@@ -239,6 +240,9 @@ transform = Transform3D(-0.597275, 0, -0.802036, 0, 1, 0, 0.802036, 0, -0.597275
 
 [node name="ReptileMonster11" parent="Enemies" instance=ExtResource("14_qyaw1")]
 transform = Transform3D(-0.879266, 0, -0.47633, 0, 1, 0, 0.47633, 0, -0.879266, 112.693, 2.08547, -160.14)
+
+[node name="skelet_monster" parent="Enemies" instance=ExtResource("8_hiqwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.673363, 0.84797263, -3.9037566)
 
 [node name="Pickups" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5163, 0, 2.89275)

@@ -1,0 +1,267 @@
+[gd_scene load_steps=19 format=3 uid="uid://dadv5ds3fo37h"]
+
+[ext_resource type="PackedScene" uid="uid://caf5bpetmv4kt" path="res://characters/enemies/monster.tscn" id="1_aom07"]
+[ext_resource type="PackedScene" uid="uid://ba0s55d7c0gvk" path="res://weapons/bullet_emitters/area_damage_emitter.tscn" id="2_617al"]
+[ext_resource type="PackedScene" uid="uid://bxfqyub4ko0r7" path="res://characters/hit_box.tscn" id="4_xbakg"]
+[ext_resource type="PackedScene" uid="uid://c01uk7gdet860" path="res://characters/enemies/skeleton_monster/SKELET.blend" id="5_in3b3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_in3b3"]
+size = Vector3(23.481873, 10.21582, 13.092773)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_snyus"]
+size = Vector3(5.661255, 1.828476, 4.5341797)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3ve5"]
+size = Vector3(11.522461, 2.0939941, 1.7592773)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0e6x"]
+size = Vector3(11.59259, 2.0939941, 2.3243408)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0m7i"]
+size = Vector3(5.661255, 1.828476, 3.3988953)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7qvs"]
+size = Vector3(11.711426, 2.0939941, 1.7592773)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m3v6b"]
+size = Vector3(10.274933, 2.0939941, 2.3243408)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47mp4"]
+size = Vector3(13.77533, 2.9863281, 2.6799622)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kychi"]
+size = Vector3(19.237167, 2.9863281, 2.6799622)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3r3nb"]
+size = Vector3(10.091518, 2.9863281, 3.3272858)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ej42"]
+size = Vector3(13.77533, 2.9863281, 2.6799622)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vchrh"]
+size = Vector3(19.237167, 2.9863281, 2.6799622)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8b1s"]
+size = Vector3(10.831901, 4.6713867, 3.3272858)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ggi6y"]
+size = Vector3(13.307098, 11.786133, 7.6623535)
+
+[node name="skelet_monster" node_paths=PackedStringArray("animation_player") instance=ExtResource("1_aom07")]
+animation_player = NodePath("Graphics/SKELET/AnimationPlayer")
+attack_range = 1.5
+
+[node name="AttackEmitter" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.780072)
+
+[node name="AreaDamageEmitter" parent="AttackEmitter" index="0" instance=ExtResource("2_617al")]
+attack_radius = 0.86
+
+[node name="SKELET" parent="Graphics" index="0" instance=ExtResource("5_in3b3")]
+transform = Transform3D(-0.025, 0, -2.1855695e-09, 0, 0.025, 0, 2.1855695e-09, 0, -0.025, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Graphics/SKELET" index="0"]
+bones/1/position = Vector3(-0.7899176, 34.09158, 0.9320714)
+bones/1/rotation = Quaternion(0.2065212, 0.6094363, 0.6866722, -0.33825696)
+bones/4/rotation = Quaternion(-0.0081862705, 0.013463438, 0.05043132, 0.9986033)
+bones/7/rotation = Quaternion(-0.016417298, 0.028122148, 0.09102166, 0.99531645)
+bones/8/rotation = Quaternion(0.14640003, -0.06972769, -0.1463884, 0.9758461)
+bones/10/position = Vector3(2.1213805e-07, 0.23370028, -1.4311158e-06)
+bones/11/rotation = Quaternion(0.6079043, -0.026539918, 0.7926406, -0.038327258)
+bones/12/rotation = Quaternion(0.058604587, 0.41134128, -0.193785, 0.88871336)
+bones/13/rotation = Quaternion(-6.6355267e-07, -0.017581774, -0.670423, 0.74177086)
+bones/14/rotation = Quaternion(-0.56504804, -0.06792885, -0.07167166, 0.8191273)
+bones/15/rotation = Quaternion(0.68003744, 0.2682227, 0.070044644, 0.67874855)
+bones/17/rotation = Quaternion(-0.05281762, 0.10777244, 0.2029688, 0.971802)
+bones/19/position = Vector3(1.1174961e-08, 0.23370044, 3.0845404e-06)
+bones/20/rotation = Quaternion(-0.6135222, -0.045721762, 0.7883356, 0.0051981676)
+bones/21/position = Vector3(6.1738086, -1.3412719, -0.105433054)
+bones/21/rotation = Quaternion(0.01735798, -0.46768293, -0.21048294, 0.85829395)
+bones/22/rotation = Quaternion(5.598986e-07, 0.018234307, -0.69606483, 0.71774733)
+bones/23/position = Vector3(11.732618, 1.5337038, -0.2775316)
+bones/23/rotation = Quaternion(0.5254655, -0.13353746, 0.09154286, 0.8352686)
+bones/24/position = Vector3(0.7287026, 0.023400236, 1.0082979)
+bones/24/rotation = Quaternion(-0.6906391, -0.3371857, -0.19590062, 0.6090538)
+bones/27/rotation = Quaternion(0.0057576755, 0.035291456, -0.08612944, 0.99564207)
+bones/32/rotation = Quaternion(0.37795144, 0.89900625, 0.13514215, -0.1751485)
+bones/33/rotation = Quaternion(-0.06011796, 0.031938653, -0.43396255, 0.8983553)
+bones/34/rotation = Quaternion(-0.002191159, -0.17870484, 0.11112592, 0.9776047)
+bones/35/rotation = Quaternion(0.0033875615, 0.0032407837, 0.72309333, 0.6907344)
+bones/37/rotation = Quaternion(0.32715544, 0.9298195, -0.13116477, 0.10583376)
+bones/38/rotation = Quaternion(0.06706713, -0.03838972, -0.4366982, 0.89628285)
+bones/39/rotation = Quaternion(0.0017662919, 0.1553269, 0.15277497, 0.9759766)
+bones/40/rotation = Quaternion(-0.00086401444, -0.0008636485, 0.7071066, 0.707106)
+
+[node name="defuse" parent="Graphics/SKELET/Skeleton3D" index="0"]
+visible = false
+
+[node name="spine" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="2"]
+transform = Transform3D(-0.095713004, -0.30806303, 0.9465389, 0.9764657, -0.21368857, 0.029191557, 0.19327174, 0.9270568, 0.3212657, -0.36239734, 34.96984, -0.4116515)
+bone_name = "Bip01 Spine"
+bone_idx = 3
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/spine" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/spine/HitBox" index="0"]
+transform = Transform3D(0.99975157, 1.06636435e-07, -4.2257398e-10, -1.4074612e-07, 0.99983436, -1.0477379e-09, 4.2240345e-09, 6.5076165e-08, 0.9997516, 4.9064255, 2.9841356, 0.5217228)
+shape = SubResource("BoxShape3D_in3b3")
+
+[node name="left_hand" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="3"]
+transform = Transform3D(-0.40277642, -0.46390077, 0.7890287, -0.32601783, -0.7327961, -0.59726167, 0.8552678, -0.49780077, 0.14391296, 3.1185126, 35.41335, 15.575692)
+bone_name = "Bip01 L Hand"
+bone_idx = 14
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/left_hand" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/left_hand/HitBox" index="0"]
+transform = Transform3D(0.88277566, 0.46974802, -0.006677123, -0.46970126, 0.88279396, 0.0075259265, 0.009429807, -0.0035074744, 0.9999494, 2.1382103, -0.8029175, -0.667928)
+shape = SubResource("BoxShape3D_snyus")
+
+[node name="left_upperarm" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="4"]
+transform = Transform3D(0.5209235, 0.5806826, 0.6256563, -0.85341376, 0.36972183, 0.36741012, -0.017970383, -0.7253365, 0.6881596, 5.204088, 50.39449, 5.7209463)
+bone_name = "Bip01 L UpperArm"
+bone_idx = 12
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/left_upperarm" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/left_upperarm/HitBox" index="0"]
+transform = Transform3D(1, -1.1368684e-13, -5.107026e-14, -2.4726887e-12, 0.9999998, 0, 8.995471e-12, 7.450581e-09, 1, 4.407713, -1.9083583, -0.3325386)
+shape = SubResource("BoxShape3D_e3ve5")
+
+[node name="left_forearm" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="5"]
+transform = Transform3D(-0.5089016, 0.59154695, 0.6253724, -0.44386554, -0.80277807, 0.3981584, 0.7375649, -0.07495803, 0.6711027, 8.750483, 41.068127, 6.1859922)
+bone_name = "Bip01 L Forearm"
+bone_idx = 13
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/left_forearm" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/left_forearm/HitBox" index="0"]
+transform = Transform3D(0.9997322, 0.0006066275, 0.023133015, -0.00060663454, 0.99997765, -6.467104e-06, -0.023133038, -6.683171e-06, 0.99973226, 6.2742023, -0.43766302, 0.16184998)
+shape = SubResource("BoxShape3D_s0e6x")
+
+[node name="right_hand" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="6"]
+transform = Transform3D(0.26875633, 0.8131189, 0.5163401, -0.24064486, -0.46238083, 0.8534015, 0.93266314, -0.35361204, 0.07140495, -11.228891, 34.257805, 11.250223)
+bone_name = "Bip01 R Hand"
+bone_idx = 23
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/right_hand" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/right_hand/HitBox" index="0"]
+transform = Transform3D(0.8827781, 0.46974024, -0.006677148, -0.46968916, 0.88277036, 0.007525321, 0.0094296895, -0.003507411, 0.9999283, 2.2045956, -0.48542404, 2.0447073)
+shape = SubResource("BoxShape3D_w0m7i")
+
+[node name="right_upperarm" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="7"]
+transform = Transform3D(-0.08745292, 0.020596698, 0.99595547, -0.98074853, 0.17345239, -0.08970463, -0.17459847, -0.98462725, 0.005031064, -9.746126, 48.037548, 1.6590031)
+bone_name = "Bip01 R UpperArm"
+bone_idx = 21
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/right_upperarm" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/right_upperarm/HitBox" index="0"]
+transform = Transform3D(1, -1.1368684e-13, -5.551115e-14, -2.3874236e-12, 1, 0, 9.360512e-12, -5.5879354e-08, 1, 4.3132305, -1.9083587, -0.3325386)
+shape = SubResource("BoxShape3D_x7qvs")
+
+[node name="right_forearm" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="8"]
+transform = Transform3D(-0.049302116, -0.11202553, 0.99248123, -0.2007038, -0.9723094, -0.11971869, 0.978411, -0.20509717, 0.025452778, -10.20319, 38.070595, 0.09252179)
+bone_name = "Bip01 R Forearm"
+bone_idx = 22
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/right_forearm" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/right_forearm/HitBox" index="0"]
+transform = Transform3D(0.99973226, 0.00060662755, 0.023133019, -0.0006066393, 0.9999829, -6.2584877e-06, -0.023133041, -6.76699e-06, 0.9997323, 5.615549, -0.3300258, 0.17989731)
+shape = SubResource("BoxShape3D_m3v6b")
+
+[node name="left_thight" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="9"]
+transform = Transform3D(0.261927, -0.17310068, -0.9494368, -0.7604447, 0.5687307, -0.31347933, 0.5942377, 0.80410236, 0.017332554, 3.2222028, 33.308002, 1.0767839)
+bone_name = "Bip01 L Thigh"
+bone_idx = 32
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/left_thight" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/left_thight/HitBox" index="0"]
+transform = Transform3D(0.98746943, 0.001402393, 0.15778214, 0.0027797073, 0.99959236, -0.026288759, -0.15776373, 0.02639761, 0.98712385, 9.04599, 0.98943615, -1.3198614)
+shape = SubResource("BoxShape3D_47mp4")
+
+[node name="left_calve" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="10"]
+transform = Transform3D(0.30331418, 0.22544017, -0.92583853, -0.9164681, -0.19704334, -0.3482242, -0.26093325, 0.95412296, 0.14684278, 10.534803, 20.915443, 9.34199)
+bone_name = "Bip01 L Calf"
+bone_idx = 33
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/left_calve" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/left_calve/HitBox" index="0"]
+transform = Transform3D(0.9923546, -0.044320785, 0.11496697, 0.04721805, 0.99857044, -0.022616504, -0.11381115, 0.027872296, 0.99311435, 9.296485, 2.1622462, -0.5693755)
+shape = SubResource("BoxShape3D_kychi")
+
+[node name="left_foot" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="11"]
+transform = Transform3D(0.0025669038, 0.19494365, -0.980811, -0.9997663, 0.021554893, 0.0016676188, 0.021467157, 0.9805773, 0.19495322, 18.57712, 3.1573944, 4.494717)
+bone_name = "Bip01 L Foot"
+bone_idx = 34
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/left_foot" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/left_foot/HitBox" index="0"]
+transform = Transform3D(0.16862467, -0.98556215, 0.006614622, 0.985576, 0.16867682, 0.009698792, -0.010682492, 0.00488465, 0.99993306, 0.52418745, 4.678847, 0.55150414)
+shape = SubResource("BoxShape3D_3r3nb")
+
+[node name="right_thight" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="12"]
+transform = Transform3D(-0.3740341, -0.45725015, -0.80685854, -0.877423, 0.45625788, 0.14818233, 0.30037916, 0.7633817, -0.57185763, -3.397334, 33.2611, -2.580405)
+bone_name = "Bip01 R Thigh"
+bone_idx = 37
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/right_thight" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/right_thight/HitBox" index="0"]
+transform = Transform3D(0.98797697, 0.07941527, -0.13261388, -0.07999882, 0.9967366, 0.0009724507, 0.13226533, 0.009648437, 0.9911673, 8.936708, 1.5961208, 1.3481863)
+shape = SubResource("BoxShape3D_3ej42")
+
+[node name="right_calve" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="13"]
+transform = Transform3D(0.12176145, -0.6936643, -0.70993245, -0.89817375, -0.3814225, 0.21863516, -0.42244372, 0.6110216, -0.66947335, -11.637913, 19.29227, 1.0729401)
+bone_name = "Bip01 R Calf"
+bone_idx = 38
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/right_calve" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/right_calve/HitBox" index="0"]
+transform = Transform3D(0.990467, -0.052678626, -0.12709235, 0.047355186, 0.9978261, -0.044541657, 0.12915897, 0.038097516, 0.9908929, 9.2734785, 1.563104, 0.7754259)
+shape = SubResource("BoxShape3D_vchrh")
+
+[node name="right_foot" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="14"]
+transform = Transform3D(0.117826134, -0.7336642, -0.669219, -0.9930304, -0.08513373, -0.08150606, 0.0028248578, 0.6741586, -0.7385818, -9.822859, 1.3354034, -8.540523)
+bone_name = "Bip01 R Foot"
+bone_idx = 39
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/right_foot" index="0" instance=ExtResource("4_xbakg")]
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/right_foot/HitBox" index="0"]
+transform = Transform3D(0.16862147, -0.9855405, 0.0066137696, 0.9855793, 0.16867691, 0.009698819, -0.010682316, 0.004884657, 0.99992377, 1.4634745, 4.9000583, -0.23590565)
+shape = SubResource("BoxShape3D_j8b1s")
+
+[node name="head" type="BoneAttachment3D" parent="Graphics/SKELET/Skeleton3D" index="15"]
+transform = Transform3D(-0.06835627, -0.06636584, 0.9954509, 0.98198634, -0.18065172, 0.055387773, 0.17615417, 0.98130554, 0.07751891, -3.7353618, 54.58014, 6.1842413)
+bone_name = "Bip01 Head"
+bone_idx = 8
+
+[node name="HitBox" parent="Graphics/SKELET/Skeleton3D/head" index="0" instance=ExtResource("4_xbakg")]
+weak_spot = true
+
+[node name="CollisionShape3D" parent="Graphics/SKELET/Skeleton3D/head/HitBox" index="0"]
+transform = Transform3D(0.99999875, 2.7567148e-06, 2.7939677e-09, 5.9604645e-08, 0.9999367, 0, -7.543713e-08, -4.172325e-07, 0.9999998, 4.196926, 2.3774037, -0.32458735)
+shape = SubResource("BoxShape3D_ggi6y")
+
+[editable path="Graphics/SKELET"]
+[editable path="Graphics/SKELET/Skeleton3D/spine/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/left_hand/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/left_upperarm/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/left_forearm/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/right_hand/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/right_upperarm/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/right_forearm/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/left_thight/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/left_calve/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/left_foot/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/right_thight/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/right_calve/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/right_foot/HitBox"]
+[editable path="Graphics/SKELET/Skeleton3D/head/HitBox"]
