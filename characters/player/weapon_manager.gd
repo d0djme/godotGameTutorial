@@ -1,5 +1,7 @@
 extends Node3D
 
+signal weapon_fired
+
 @onready var animation_player = $AnimationPlayer
 @onready var weapons = $Weapons.get_children()
 var weapons_unlocked = []
@@ -15,6 +17,7 @@ func _ready():
 	for weapon in weapons:
 		if !weapon.silent_weapon:
 			weapon.fired.connect(alert_enmies_on_fired)
+			weapon.fired.connect(func(): weapon_fired.emit())
 		if weapon.has_method("set_bodies_to_exclude"):
 			weapon.set_bodies_to_exclude([get_parent().get_parent()])
 	disable_all_weapons()
@@ -26,6 +29,11 @@ func _ready():
 func attack(input_just_pressed: bool, input_held: bool):
 	if cur_weapon is Weapon:
 		cur_weapon.attack(input_just_pressed, input_held)
+
+func reload_current() -> void:
+	if cur_weapon and cur_weapon.has_method("reload"):
+		cur_weapon.reload()
+
 
 func enable_weapon(weapon : Weapon):
 	if weapon == null:

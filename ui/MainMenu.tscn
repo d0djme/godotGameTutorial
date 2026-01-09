@@ -1,0 +1,138 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5f6o2njcg155"]
+
+[ext_resource type="Script" uid="uid://bjjn262vou5d4" path="res://ui/MainMenu.gd" id="1_b00nv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c13yd"]
+line_spacing = 3.47
+paragraph_spacing = 0.395
+font_size = 116
+font_color = Color(1, 0, 0.18431373, 1)
+shadow_size = 11
+shadow_color = Color(0, 0, 0, 0.28627452)
+shadow_offset = Vector2(2.3, 2.13)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b00nv"]
+font_size = 231
+
+[sub_resource type="LabelSettings" id="LabelSettings_rn8js"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmrkx"]
+font_size = 36
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b00nv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.0029887)
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 39
+alignment = 1
+
+[node name="Name" type="Label" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+text = "Dumb and brave"
+label_settings = SubResource("LabelSettings_c13yd")
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "Setting"
+
+[node name="Exit" type="Button" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "Exit"
+
+[node name="version" type="Label" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "v.001 bad edition"
+
+[node name="SettingsPanel" type="PanelContainer" parent="CenterContainer/Panel"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxSettings" type="VBoxContainer" parent="CenterContainer/Panel/SettingsPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings"]
+layout_mode = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_b00nv")
+
+[node name="HBoxVolume" type="HBoxContainer" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings/HBoxVolume"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_rn8js")
+
+[node name="VolumeSlider" type="HSlider" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings/HBoxVolume"]
+modulate = Color(1, 0.37254903, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="HBoxSensitivity" type="HBoxContainer" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings/HBoxSensitivity"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Mouse Sensivity"
+label_settings = SubResource("LabelSettings_nmrkx")
+
+[node name="SensitivitySlider" type="HSlider" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings/HBoxSensitivity"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/Panel/SettingsPanel/VBoxSettings"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBox/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBox/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="CenterContainer/Panel/SettingsPanel/VBoxSettings/HBoxVolume/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Panel/SettingsPanel/VBoxSettings/HBoxSensitivity/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/Panel/SettingsPanel/VBoxSettings/BackButton" to="." method="_on_back_button_pressed"]

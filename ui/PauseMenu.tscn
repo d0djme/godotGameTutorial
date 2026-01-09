@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://oqhho5glugg4"]
+
+[ext_resource type="Script" uid="uid://deywn5u2eu6il" path="res://ui/PauseMenu.gd" id="1_c7v6e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fenq7"]
+font_size = 106
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c7v6e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_fenq7")
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "Resume
+"
+
+[node name="MainMenuButton" type="Button" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "Main menu
+"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBox/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBox/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBox/QuitButton" to="." method="_on_quit_button_pressed"]

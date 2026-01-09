@@ -5,6 +5,19 @@ extends CharacterBody3D
 @onready var health_manager = $HealthManager
 @onready var weapon_manager = $Camera3D/WeaponManager
 @onready var death_screen = $PlayerUILayer/DeathScreen
+@onready var pause_menu = $PlayerUILayer/PauseMenu
+
+
+@export var recoil_up_deg := 1.1
+@export var recoil_side_deg := 0.35
+@export var recoil_return_speed := 18.0
+
+var look_yaw_deg: float = 0.0
+var look_pitch_deg: float = 0.0
+
+var recoil_pitch_deg: float = 0.0
+var recoil_yaw_deg: float = 0.0
+
 
 @export var mouse_sensitivity_h := 0.15
 @export var mouse_sensitivity_v := 0.15
@@ -27,6 +40,13 @@ var dead := false
 # =====================================================
 
 func _ready():
+	weapon_manager.weapon_fired.connect(_on_weapon_fired)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	health_manager.died.connect(kill)
+
+	look_yaw_deg = rotation_degrees.y
+	look_pitch_deg = camera_3d.rotation_degrees.x
+	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	health_manager.died.connect(kill)
 
@@ -37,9 +57,9 @@ func _input(event):
 		return
 
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * mouse_sensitivity_h
-		camera_3d.rotation_degrees.x -= event.relative.y * mouse_sensitivity_v
-		camera_3d.rotation_degrees.x = clamp(camera_3d.rotation_degrees.x, -90, 90)
+		look_yaw_deg -= event.relative.x * mouse_sensitivity_h
+		look_pitch_deg -= event.relative.y * mouse_sensitivity_v
+		look_pitch_deg = clamp(look_pitch_deg, -90.0, 90.0)
 
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -53,6 +73,11 @@ func _input(event):
 # =====================================================
 
 func _process(_delta):
+	if Input.is_action_pressed("pause"):
+		if pause_menu.visible:
+			pause_menu.close()
+		else:
+			pause_menu.open()
 	# --- Системные хоткеи ---
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
@@ -102,7 +127,18 @@ func _process(_delta):
 		Input.is_action_just_pressed("attack"),
 		Input.is_action_pressed("attack")
 	)
+	if Input.is_action_just_pressed("reload"):
+		weapon_manager.reload_current()
 
+	
+	# применяем итоговый прицел
+	rotation_degrees.y = look_yaw_deg + recoil_yaw_deg
+	camera_3d.rotation_degrees.x = clamp(look_pitch_deg - recoil_pitch_deg, -90.0, 90.0)
+
+	# плавный возврат отдачи к 0
+	var k := 1.0 - exp(-recoil_return_speed * _delta)
+	recoil_pitch_deg = lerpf(recoil_pitch_deg, 0.0, k)
+	recoil_yaw_deg = lerpf(recoil_yaw_deg, 0.0, k)
 # =====================================================
 
 func kill():
@@ -112,3 +148,7 @@ func kill():
 
 func hurt(damage_data: DamageData):
 	health_manager.hurt(damage_data)
+	
+func _on_weapon_fired():
+	recoil_pitch_deg += recoil_up_deg
+	recoil_yaw_deg += randf_range(-recoil_side_deg, recoil_side_deg)

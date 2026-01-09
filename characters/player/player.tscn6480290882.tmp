@@ -1418,6 +1418,11 @@ _data = {
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_7n32i")
+recoil_up_deg = null
+recoil_side_deg = null
+recoil_return_speed = null
+mouse_sensitivity_h = null
+mouse_sensitivity_v = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -1442,6 +1447,7 @@ script = ExtResource("2_xwbhm")
 
 [node name="Machete" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(0.360843, 0, 0, 0, 0.360843, 0, 0, 0, 0.360843, 0, 0, 0)
+visible = false
 script = ExtResource("4_vefdk")
 automatic = true
 damage = 15
@@ -1514,7 +1520,6 @@ transform = Transform3D(0.414884, 0, 0, 0, 0.414884, 0, 0, 0, 0.414884, 0, 0, 0)
 script = ExtResource("4_vefdk")
 automatic = true
 attack_rate = 0.1
-uses_magazines = true
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 
@@ -1590,6 +1595,7 @@ bus = &"Sfx"
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(0.42332, 0, 0, 0, 0.42332, 0, 0, 0, 0.42332, 0, 0, 0)
+visible = false
 script = ExtResource("4_vefdk")
 attack_rate = 0.8
 
@@ -1660,6 +1666,7 @@ bus = &"Sfx"
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(0.315467, 0, 0, 0, 0.315467, 0, 0, 0, 0.315467, 0, 0, -0.0700369)
+visible = false
 script = ExtResource("4_vefdk")
 damage = 40
 attack_rate = 0.5
