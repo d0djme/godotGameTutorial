@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://0dhe3gjbitcc"]
+[gd_scene load_steps=26 format=3 uid="uid://0dhe3gjbitcc"]
 
 [ext_resource type="Script" uid="uid://djlsqvt1tg0d5" path="res://levels/LevelsManager.gd" id="1_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://b8s3n8yb106ff" path="res://environment/rock_boulder.tscn" id="1_316k8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bhoh5c6rlhvd5" path="res://ExitArea.gd" id="6_udxuc"]
 [ext_resource type="PackedScene" uid="uid://c7cytar1b73si" path="res://characters/enemies/bird_monster/bird_monster.tscn" id="6_vtoyk"]
 [ext_resource type="PackedScene" uid="uid://cf6cs1c8gbxdw" path="res://pickups/health_pickup.tscn" id="7_4qk82"]
+[ext_resource type="PackedScene" uid="uid://t71dagpon0pj" path="res://ui/EndLevelScreen.tscn" id="7_ikiii"]
 [ext_resource type="PackedScene" uid="uid://dadv5ds3fo37h" path="res://characters/enemies/skeleton_monster/skeleton.tscn" id="8_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://dnyubb1dv6cb7" path="res://pickups/shotgun_pickup.tscn" id="8_xt8bw"]
 [ext_resource type="PackedScene" uid="uid://cue0caxdg8e0" path="res://pickups/machine_gun_pickup.tscn" id="9_imodu"]
@@ -175,6 +176,7 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 50, 0,
 transform = Transform3D(0.9999996, 0.0009075711, 0, -0.0009075711, 0.9999996, 0, 0, 0, 1, 90.96955, 3.7964544, -177.34804)
 collision_mask = 2
 script = ExtResource("6_udxuc")
+stats_screen_scene = ExtResource("7_ikiii")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/ExitArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8132019, 0, 0)

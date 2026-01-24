@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://t71dagpon0pj"]
+
+[ext_resource type="Script" uid="uid://dyr8agk4ossu" path="res://ui/EndLevelScreen.gd" id="1_bl42o"]
+
+[node name="EndLevelScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bl42o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Time" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Kills" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Next" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Next
+"
+
+[node name="Restart" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart
+"
+
+[node name="Return to menu" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return to menu"

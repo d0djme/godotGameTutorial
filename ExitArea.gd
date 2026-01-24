@@ -1,12 +1,26 @@
 extends Area3D
 
+@export var stats_screen_scene: PackedScene
+var _triggered := false
+
 func _ready() -> void:
-	# подключаем сигнал
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node) -> void:
-	# проверка, что это игрок
-	if body.is_in_group("player"):
-		print("⚡ Player exited level!")
-		# временно можно запустить меню:
-		get_tree().change_scene_to_file("res://ui/main_menu.tscn")
+	if _triggered:
+		return
+	if not body.is_in_group("player"):
+		return
+
+	_triggered = true
+
+	print("Player touched ExitArea")
+
+	LevelStats.finish_level()
+	get_tree().paused = true
+
+	if stats_screen_scene:
+		var ui = stats_screen_scene.instantiate()
+		get_tree().current_scene.add_child(ui)
+	else:
+		print("stats_screen_scene is NOT set in Inspector")
