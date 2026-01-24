@@ -79,8 +79,6 @@ func _process(_delta):
 		else:
 			pause_menu.open()
 	# --- Системные хоткеи ---
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
 
 	if Input.is_action_just_pressed("restart"):
 		get_tree().call_group("instanced", "queue_free")
